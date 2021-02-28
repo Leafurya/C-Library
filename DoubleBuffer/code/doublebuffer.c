@@ -15,7 +15,7 @@ typedef struct buffer_{
 		DeleteObject(SelectObject(bfm->MemDC,bfm->oldbit));
 		DeleteDC(bfm->MemDC);
 	}
-void DoubleBuffer(HDC hdc,RECT rt,void *(DrawFunc)(HDC,RECT)){
+void DoubleBuffer(HDC hdc,RECT rt,void (*DrawFunc)(HDC,RECT)){
 	MEMBUF bfm;
 	
 	MInitMem(&bfm,hdc,rt);

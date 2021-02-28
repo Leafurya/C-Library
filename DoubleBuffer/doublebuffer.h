@@ -7,7 +7,7 @@ extern "C"{
 
 #include <windows.h>
 
-void DoubleBuffer(HDC hdc,RECT rt,void *(DrawFunc)(HDC,RECT));
+void DoubleBuffer(HDC hdc,RECT rt,void (*DrawFunc)(HDC,RECT));
 
 #ifdef __cplusplus
 }
