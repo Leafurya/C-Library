@@ -4,7 +4,7 @@
 #include "strproc2.h"
 
 int main() {
-	char *str=GetString("this is %s lib","string proccess");
+	char *str=GetString("this is %s library","string proccessing");
 	STRING string;
 	int i;
 	
@@ -19,6 +19,7 @@ int main() {
 	
 	DeleteString(&string);
 	free(str);
+	printf("end program\n");
 	
 	return 0;
 }

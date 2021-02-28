@@ -68,5 +68,5 @@ void DeleteString(STRING *pStr){
 		memset(pStr->strings[i],0,strlen(pStr->strings[i]));
 		free(pStr->strings[i]);
 	}
-	free(pStr);
+	free(pStr->strings);
 }
