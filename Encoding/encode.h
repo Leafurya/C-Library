@@ -7,10 +7,19 @@ extern "C"{
 
 #include <string.h>
 
-typedef unsigned int uint;
+#ifdef custom_key
+	#include "custom_key.h"
+	#ifndef keytype
+		#error not defined custom keytype
+	#endif
+#else
+	#ifndef keytype
+		typedef unsigned int uint;
+		#define keytype uint
+	#endif
+#endif
 
-#define KEYBIT (sizeof(uint)*8)
-#define keytype uint
+#define KEYBIT (sizeof(keytype)*8)
 
 typedef struct _code{
 	unsigned char *str;
