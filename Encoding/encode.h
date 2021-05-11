@@ -7,20 +7,6 @@ extern "C"{
 
 #include <string.h>
 
-#ifdef custom_key
-	#include "custom_key.h"
-	#ifndef keytype
-		#error not defined custom keytype
-	#endif
-#else
-	#ifndef keytype
-		typedef unsigned int uint;
-		#define keytype uint
-	#endif
-#endif
-
-#define KEYBIT (sizeof(keytype)*8)
-
 typedef struct _code{
 	unsigned char *str;
 	int len;
@@ -28,12 +14,12 @@ typedef struct _code{
 
 Code CreateCodePack(char *str,int len);
 void DestroyCodePack(Code *c);
-keytype CreateKey();
-Code Encode(Code cd,keytype key);
-Code Decode(Code cd,keytype key);
+char *CreateKey(int byte);
+Code Encode(Code cd,char *key);
+Code Decode(Code cd,char *key);
 
-char *EncodeToHex(char *str,keytype key);
-char *DecodeFromHex(char *enc,keytype key);
+char *EncodeToHex(char *str,char *key);
+char *DecodeFromHex(char *enc,char *key);
 
 #ifdef __cplusplus
 }

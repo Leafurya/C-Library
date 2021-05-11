@@ -9,7 +9,7 @@ int main() {
 	char *fileBin;
 	char *encBin;
 	char *decBin;
-	keytype key=CreateKey();
+	char *key=CreateKey();
 	
 	fseek(file,0,SEEK_END);
 	size=ftell(file);
